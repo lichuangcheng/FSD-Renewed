@@ -4,6 +4,8 @@ project(fsd
         LANGUAGES C CXX)
 link_libraries(ws2_32)
 
+add_definitions(-D_USE_MATH_DEFINES)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_executable(fsd
         fsd/attributes.h
@@ -52,3 +54,4 @@ add_executable(fsd
         fsd/httplib.h)
 set_property(TARGET fsd PROPERTY CXX_STANDARD 14)
 set_property(TARGET fsd PROPERTY CXX_STANDARD_REQUIRED ON)
+target_compile_definitions(fsd PRIVATE -D_CRT_SECURE_NO_WARNINGS)

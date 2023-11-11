@@ -384,7 +384,7 @@ void cluser::execcq(char **array, int count)
    }
    if (STRCASECMP(array[1], "server"))
    {
-       if (!STRCASECMP(strupr(array[2]), "ATIS")&&thisclient->type==CLIENT_PILOT)
+       if (!STRCASECMP(fsd_strupr(array[2]), "ATIS")&&thisclient->type==CLIENT_PILOT)
        {
            client *cl=getclient(array[1]);
            if (cl)
@@ -411,7 +411,7 @@ void cluser::execcq(char **array, int count)
       execmulticast(array, count, CL_CQ, 1, 1);
       return;
    }
-   if (!STRCASECMP(strupr(array[2]), "RN"))
+   if (!STRCASECMP(fsd_strupr(array[2]), "RN"))
    {
 	client *cl=getclient(array[1]);
 	if (cl)

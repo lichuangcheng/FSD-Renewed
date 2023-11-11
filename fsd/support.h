@@ -41,7 +41,7 @@ char *catargs(char **, int, char *);
 char *catcommand(char **, int, char *);
 void snappacket(char *, char *, int);
 void findhostname(unsigned long, char *);
-char *strupr(char *);
+char *fsd_strupr(char *);
 double dist(double, double, double, double);
 char *printloc(double, double, char *);
 char *sprinttime(time_t, char *);

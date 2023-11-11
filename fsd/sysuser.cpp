@@ -196,11 +196,11 @@ void sysuser::exechelp(char **array, int count)
          strcat(line,syscmds[count]);
          if (strlen(line)>65)
          {
-            uprintf("%s\r\n",strupr(line));
+            uprintf("%s\r\n",fsd_strupr(line));
             line[0]='\0';
          }
       }
-      if (line[0]) uprintf("%s\r\n",strupr(line));
+      if (line[0]) uprintf("%s\r\n",fsd_strupr(line));
    }
 }
 void sysuser::list(char *s)
@@ -858,7 +858,7 @@ void sysuser::execwp(char **array, int count)
       usage(SYS_WP, help);
       return;
    }
-   strupr(array[1]);
+   fsd_strupr(array[1]);
    wp=getwprofile(array[1]);
    if (!STRCASECMP(mode, "create"))
    {

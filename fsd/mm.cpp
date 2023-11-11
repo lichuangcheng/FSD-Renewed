@@ -142,7 +142,7 @@ void mm::buildlist()
          stationlist=(station*) realloc(stationlist, sizeof(station)*
          (max+=1000));
       stationlist[nstations].location=offset;
-      strupr(statname);
+      fsd_strupr(statname);
       strcpy(stationlist[nstations++].name,statname);
    }
    stationlist=(station*)realloc(stationlist, sizeof(station)*nstations);
@@ -379,7 +379,7 @@ int mm::doparse(mmq *q)
    checkmetarfile();
    strncpy(key.name, q->metarid, 4);
    key.name[4]='\0';
-   strupr(key.name);
+   fsd_strupr(key.name);
    station *location=(station *) bsearch(&key, stationlist, nstations,
       sizeof(station), comparestation);
    if (!location)

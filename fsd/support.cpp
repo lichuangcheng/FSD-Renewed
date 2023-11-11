@@ -4,6 +4,8 @@
 #include <cstdarg>
 #include <ctime>
 #include <cctype>
+// #define _USE_MATH_DEFINES
+#include <math.h>
 #ifdef WIN32
 	#include <winsock2.h>
 #else
@@ -139,7 +141,7 @@ void findhostname(unsigned long ip, char *buf)
    if (hent) strcpy(buf,hent->h_name); else
       sprintf(buf,"%ld.%ld.%ld.%ld", ip>>24, 0xff&(ip>>16), 0xff&(ip>>8), 0xff&ip);
 }
-char *strupr(char *line)
+char *fsd_strupr(char *line)
 {
    char *p;
    for (p=line;*p;p++) *p=toupper(*p);
